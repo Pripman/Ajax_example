@@ -7,34 +7,41 @@
                 <script type="text/javascript" src="IndkøbKode.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
         </head>
-        <body>
-		<div class="table">
-			  <div class="table-row">
-				         <div class="table-cell">madvare</div>
-				         <div class="table-cell"><input type="text" id="name"></div>
-			  </div>
-			  <div class="table-row">
-					 <div class="table-cell">mængde </div>
-					 <div class="table-cell"><input type="text" id="amount"></div>
-			 </div>
-			 <div class="table-row">
-					 <div class="table-cell">enhed</div>
-					 <div class="table-cell"><input type="text" id="unit"></div>
-			  </div>
-			  <div class="table-row">
-					 <div class="table-cell"></div>
-					 <div class="table-cell"><button type="button" onclick="makeIngridient()">Tilføj vare</button>
-						 <br>
-						 <br>
-						 <br>
-						 <br>
-						 <br>
-			  </div>
-			  </div>
 
 
+	<body>
+		<div id="header">
+			<h1 id="center">INDKØB</h1>
+		</div>
+		<div id="menu">
+			<div class="table" id="center">
 
-		  </div>
-		                    <div id="MinDiv"></div>
+				  <div class="table-row">
+						 <div class="table-cell">madvare</div>
+						 <div class="table-cell"><input type="text" id="name"></div>
+				  </div>
+				  <div class="table-row">
+						 <div class="table-cell">mængde </div>
+						 <div class="table-cell"><input type="text" id="amount"></div>
+				 </div>
+				 <div class="table-row">
+						 <div class="table-cell">enhed</div>
+						 <div class="table-cell"><input type="text" id="unit"></div>
+				  </div>
+				  <div class="table-row">
+						 <div class="table-cell"></div>
+						 <div class="table-cell"></div>
+				  </div>
+			  </div>
+			<button type="button" id="center" onclick="makeIngridient()">Tilføj vare</button>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+
+	    <div class="mainContent" id="MinDiv"></div>
         </body>
 </html>

@@ -2,6 +2,7 @@ function writeToTable(items){
 	var itemList = JSON.parse(items);	
 	var MinDiv = document.getElementById('MinDiv');
 	var newTable = document.createElement('table');
+	newTable.setAttribute('id', 'center');
 	var headerRow = document.createElement('tr');
 	headerRow.innerHTML = '<th>Vare</th><th>Mængde</th><th>Enhed</th>';
 	newTable.appendChild(headerRow);
