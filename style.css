@@ -1,0 +1,39 @@
+.table
+{
+	display:table;
+}
+
+.table-row
+{
+	display:table-row;
+}
+
+.table-cell
+{
+	display:table-cell;
+}
+/* ------------------
+ styling for the tables 
+   ------------------   */
+
+table
+{
+	border-collapse:collapse;
+}
+
+tr
+{
+	border:1px solid black;
+}
+th
+{
+	text-align: left;
+}
+
+
+.border-less
+{
+	border:none;
+}
+
+
