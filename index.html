@@ -1,5 +1,4 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
 <html>
         <head>
                 <title>Indkøbsliste</title>
@@ -8,40 +7,37 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
         </head>
 
-
 	<body>
-		<div id="header">
-			<h1 id="center">INDKØB</h1>
+		<div id="wrapper">			
+			<div id="header">
+				<h1 id="center">INDKØB</h1>
+			</div>
+		
+			<div id="menu">
+				<div class="table" >
+
+					  <div class="table-row">
+							 <div class="table-cell">Madvare</div>
+							 <div class="table-cell"><input type="text" id="name"></div>
+					  </div>
+					  <div class="table-row">
+							 <div class="table-cell">Mængde </div>
+							 <div class="table-cell"><input type="text" id="amount"></div>
+					 </div>
+					 <div class="table-row">
+							 <div class="table-cell">Enhed</div>
+							 <div class="table-cell"><input type="text" id="unit"></div>
+					  </div>
+					  <div class="table-row">
+							 <div class="table-cell"></div>
+							 <div class="table-cell">
+								<button type="button" onclick="makeIngridient()">Tilføj vare</button>
+							 </div>
+					  </div>
+				  </div>
+			</div>
+		    <div class="mainContent" id="MinDiv"></div>
+		    <h1 class="center">SANNE + RASMUS :)</h1>
 		</div>
-		<div id="menu">
-			<div class="table" id="center">
-
-				  <div class="table-row">
-						 <div class="table-cell">madvare</div>
-						 <div class="table-cell"><input type="text" id="name"></div>
-				  </div>
-				  <div class="table-row">
-						 <div class="table-cell">mængde </div>
-						 <div class="table-cell"><input type="text" id="amount"></div>
-				 </div>
-				 <div class="table-row">
-						 <div class="table-cell">enhed</div>
-						 <div class="table-cell"><input type="text" id="unit"></div>
-				  </div>
-				  <div class="table-row">
-						 <div class="table-cell"></div>
-						 <div class="table-cell"></div>
-				  </div>
-			  </div>
-			<button type="button" id="center" onclick="makeIngridient()">Tilføj vare</button>
-		</div>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-
-
-	    <div class="mainContent" id="MinDiv"></div>
         </body>
 </html>

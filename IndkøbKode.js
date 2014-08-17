@@ -1,4 +1,5 @@
-window.onload = function(){GetItemList()};
+/*global document:false*/
+/*global window:false*/
 function MakeApi(action, requestType, args){
 	var api = new XMLHttpRequest();
 	api.onreadystatechange = function(){
@@ -36,3 +37,5 @@ function UpdateItem(itemId){
 	var urlArguments = "id=" + itemId +"&name=" + nameInput + "&amount=" + amountInput + "&unit=" + unitInput;
 	var api = MakeApi(GetItemList, "PUT", urlArguments); 
 }
+
+window.onload = function(){GetItemList()};

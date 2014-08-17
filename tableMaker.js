@@ -1,20 +1,47 @@
-function writeToTable(items){
-	var itemList = JSON.parse(items);	
+/*global document: false*/
+function makeButton(onclickMethod, itemId, text){
+	var newCell = document.createElement('td');
+	var newButton = document.createElement('button');
+	newButton.setAttribute('type', 'button');
+	newButton.setAttribute('class', 'tableItem');
+	newButton.onclick = function(){onclickMethod(itemId);};
+        newButton.innerHTML = text;
+	newCell.appendChild(newButton);	
+	return newCell;
+}
+
+function MakeCell(tagValue, tagId){
+	var newCell = document.createElement('td');
+	var newBox = document.createElement('input');
+	newBox.setAttribute('type', 'text');
+	newBox.setAttribute('id', tagId);
+	newBox.setAttribute('class', 'tableItem');
+	newBox.setAttribute('value', tagValue);
+	newCell.appendChild(newBox);
+	return newCell;
+}
+
+function writeToTable(itemsList){
+	var items = JSON.parse(itemsList);	
 	var MinDiv = document.getElementById('MinDiv');
 	var newTable = document.createElement('table');
-	newTable.setAttribute('id', 'center');
-	var headerRow = document.createElement('tr');
-	headerRow.innerHTML = '<th>Vare</th><th>Mængde</th><th>Enhed</th>';
-	newTable.appendChild(headerRow);
 
-	for(index = 0; index < itemList.length; index++){
-		var newRow = document.createElement('tr');
-		var item = itemList[index];
- 	        newRow.appendChild(MakeCell(item.name, 'tablename' + item.id));
-		newRow.appendChild(MakeCell(item.amount, 'tableamount' + item.id));
-		newRow.appendChild(MakeCell(item.unit, 'tableunit' + item.id));
-		newRow.appendChild(makeButton(DeleteItem, item.id, "Slet"));
-		newRow.appendChild(makeButton(UpdateItem, item.id, 'Opdater vare'));
+	newTable.setAttribute('class', 'center');
+	if(items.length !== 0){
+		var headerRow = document.createElement('tr');
+		headerRow.innerHTML = '<th>Vare</th><th>Mængde</th><th>Enhed</th>';
+		newTable.appendChild(headerRow);
+	}
+
+	var i;
+	var newRow;
+	for(i = 0; i < items.length; i += 1){
+		newRow = document.createElement('tr');
+ 	        newRow.appendChild(MakeCell(items[i].name, 'tablename' + items[i].id));
+		newRow.appendChild(MakeCell(items[i].amount, 'tableamount' + items[i].id));
+		newRow.appendChild(MakeCell(items[i].unit, 'tableunit' + items[i].id));
+		newRow.appendChild(makeButton(DeleteItem, items[i].id, "Slet"));
+		newRow.appendChild(makeButton(UpdateItem, items[i].id, 'Opdater vare'));
 		newTable.appendChild(newRow);
 	}
 
@@ -25,24 +52,4 @@ function writeToTable(items){
 }
 
 
-function MakeCell(tagValue, tagId){
-	var newCell = document.createElement('td');
-	var newBox = document.createElement('input');
-	newBox.setAttribute('type', 'text');
-	newBox.setAttribute('id', tagId);
-	newBox.setAttribute('class', 'border-less');
-	newBox.setAttribute('value', tagValue);
-	newCell.appendChild(newBox);
-	return newCell;
-}
 
-function makeButton(onclickMethod, itemId, text){
-	var newCell = document.createElement('td');
-	var newButton = document.createElement('button');
-	newButton.setAttribute('type', 'button');
-	newButton.setAttribute('class', 'border-less');
-	newButton.onclick = function(){onclickMethod(itemId);};
-        newButton.innerHTML = text
-	newCell.appendChild(newButton);	
-	return newCell;
-}
